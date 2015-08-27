@@ -20,7 +20,7 @@
     NSArray *tagsToDisplay = [[NSArray alloc] initWithObjects:@"fun",@"manicure", @"relax", @"cocktails", @"relax", @"cocktails", @"cocktails",@"relax", @"cocktails", @"cocktails", nil];
     ANTagsView *tagsView = [[ANTagsView alloc] initWithTags:tagsToDisplay];
     [tagsView setTagCornerRadius:12];
-    [tagsView setTagBackgroundColor:[UIColor blueColor]];
+    [tagsView setTagBackgroundColor:[UIColor grayColor]];
     [tagsView setTagTextColor:[UIColor whiteColor]];
     [tagsView setBackgroundColor:[UIColor whiteColor]];
     [tagsView setFrameWidth:300];
