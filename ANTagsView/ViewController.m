@@ -17,6 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    NSArray *tagsToDisplay = [[NSArray alloc] initWithObjects:@"fun",@"manicure", @"relax", @"cocktails", @"relax", @"cocktails", @"cocktails",@"relax", @"cocktails", @"cocktails", nil];
+    ANTagsView *tagsView = [[ANTagsView alloc] initWithTags:tagsToDisplay];
+//    [tagsView setTagCornerRadius:12];
+//    [tagsView setTagBackgroundColor:[UIColor blueColor]];
+//    [tagsView setTagTextColor:[UIColor whiteColor]];
+//    [tagsView setBackgroundColor:[UIColor whiteColor]];
+//    [tagsView setFrameWidth:300];
+    [self.view addSubview:tagsView];
 }
 
 - (void)didReceiveMemoryWarning {
