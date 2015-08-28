@@ -3,7 +3,7 @@
 //  ANTagsView
 //
 //  Created by Adnan Nasir on 27/08/2015.
-//  Copyright (c) 2015 Inasa. All rights reserved.
+//  Copyright (c) 2015 Adnan Nasir. All rights reserved.
 //
 
 #import "ANTagsView.h"

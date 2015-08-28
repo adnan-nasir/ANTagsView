@@ -3,11 +3,10 @@
 //  ANTagsView
 //
 //  Created by Adnan Nasir on 27/08/2015.
-//  Copyright (c) 2015 Inasa. All rights reserved.
-//
+
 // This code is distributed under the terms and conditions of the MIT license.
 
-// Copyright (c) 2015-2020 Adnan Nasir
+// Copyright (c) 2015-2020 Adnan Nasir. All rights reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
