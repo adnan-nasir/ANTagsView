@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>2B9925E7-BDC0-4EFB-82E6-6F28D727AA36</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>ANTagsView</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>9685D54263B395257625A3D549FFCE576C53C024</key>
 		<string>https://github.com/adnan-careaxiom/ANTagsView.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>ANTagsView.xcodeproj/project.xcworkspace</string>
+	<string>ANTagsView.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>9685D54263B395257625A3D549FFCE576C53C024</key>

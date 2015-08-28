@@ -11,17 +11,18 @@
 #define TAG_SPACE_VERTICAL 5
 #define DEFAULT_VIEW_HEIGHT 44
 #define MAX_TAG_SIZE 300
-#define DEFAULT_VIEW_WIDTH 300
+#define MIN_TAG_SIZE 40
+#define DEFAULT_VIEW_WIDTH 320
 #define DEFAULT_TAG_CORNER_RADIUS 10
 @implementation ANTagsView
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
 -(instancetype) initWithTags:(NSArray *)tagsArray
 {
     self = [super init];
@@ -31,7 +32,24 @@
         viewWidth = DEFAULT_VIEW_WIDTH;
         tagsToDisplay = tagsArray;
         maxTagSize = DEFAULT_VIEW_WIDTH - TAG_SPACE_HORIZONTAL;
-        self.backgroundColor = [UIColor whiteColor];
+        tagRadius = DEFAULT_TAG_CORNER_RADIUS;
+        tagTextColor = [UIColor blueColor];
+        tagBGColor = [UIColor grayColor];
+        [self renderTagsOnView];
+        
+    }
+    return self;
+    
+}
+-(instancetype) initWithTags:(NSArray *)tagsArray frame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if(self)
+    {
+        
+        viewWidth = frame.size.width;
+        tagsToDisplay = tagsArray;
+        maxTagSize = DEFAULT_VIEW_WIDTH - TAG_SPACE_HORIZONTAL;
         tagRadius = DEFAULT_TAG_CORNER_RADIUS;
         tagTextColor = [UIColor blueColor];
         tagBGColor = [UIColor grayColor];
@@ -44,15 +62,17 @@
 -(void) renderTagsOnView
 {
     [self removeAllTags];
+    
     tagXPos = TAG_SPACE_HORIZONTAL;
     tagYPos = TAG_SPACE_VERTICAL;
     viewHeight = DEFAULT_VIEW_HEIGHT;
-    self.frame = CGRectMake(0, 0, viewWidth, viewHeight);
+    
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, viewWidth, viewHeight);
     for (NSString *tag in tagsToDisplay)
     {
         [self addTagInView:tag];
     }
-    self.frame = CGRectMake(30, 120, viewWidth, viewHeight);
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y+10, viewWidth, viewHeight+10);
 }
 -(void) setTagBackgroundColor:(UIColor *)color
 {
@@ -70,10 +90,10 @@
 -(void) removeAllTags
 {
     
-        for (UIView *view in self.subviews)
-        {
-            [view removeFromSuperview];
-        }
+    for (UIView *view in self.subviews)
+    {
+        [view removeFromSuperview];
+    }
     
 }
 -(void) setFrameWidth:(int)width;
@@ -119,6 +139,8 @@
     CGSize expectedLabelSize = [tag sizeWithFont:tagFont
                                constrainedToSize:maximumLabelSize
                                    lineBreakMode:[tagLabel lineBreakMode]];
+    if(expectedLabelSize.width < MIN_TAG_SIZE)
+        expectedLabelSize.width = MIN_TAG_SIZE;
     NSLog(@"%f",expectedLabelSize.width);
     
     if((tagXPos + expectedLabelSize.width) > self.frame.size.width)
@@ -142,7 +164,7 @@
     
     
     
-   
+    
     
 }
 

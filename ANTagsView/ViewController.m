@@ -16,9 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
     // Do any additional setup after loading the view, typically from a nib.
     NSArray *tagsToDisplay = [[NSArray alloc] initWithObjects:@"fun",@"manicure", @"relax", @"cocktails", @"relax", @"cocktails", @"cocktails",@"relax", @"cocktails", @"cocktails", nil];
-    ANTagsView *tagsView = [[ANTagsView alloc] initWithTags:tagsToDisplay];
+    ANTagsView *tagsView = [[ANTagsView alloc] initWithTags:tagsToDisplay frame:CGRectMake(10, 130, screenRect.size.width - 10, 10)];
     [tagsView setTagCornerRadius:12];
     [tagsView setTagBackgroundColor:[UIColor grayColor]];
     [tagsView setTagTextColor:[UIColor whiteColor]];

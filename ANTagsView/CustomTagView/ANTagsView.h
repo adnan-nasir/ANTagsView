@@ -42,6 +42,7 @@
 }
 
 -(instancetype) initWithTags:(NSArray *)tagsArray;
+-(instancetype) initWithTags:(NSArray *)tagsArray frame:(CGRect)frame;
 -(void) setTagCornerRadius:(int)radius;
 -(void) setTagBackgroundColor:(UIColor *)color;
 -(void) setTagTextColor:(UIColor *)color;
